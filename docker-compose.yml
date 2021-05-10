@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  api:
+    build: .
+    image: midas/api
+    ports:
+      - 3000:3000
+    env_file: .docker-compose.env

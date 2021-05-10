@@ -1,0 +1,9 @@
+.git
+
+# OS-X
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# project
+reports
