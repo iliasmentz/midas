@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "outDir": "./build",
+    "strict": true
+  },
+  "include": ["./src/*"],
+  "exclude": ["./**/__tests__/*", "./**/__functionaltests__/*"]
+}

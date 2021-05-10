@@ -1,0 +1,42 @@
+defaults: &defaults
+  docker:
+    - image: cimg/node:14.8
+
+jobs:
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run lint
+  unit_tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run test
+
+  functional_tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          command: ./scripts/functional-tests.sh
+
+orbs:
+  node: circleci/node@4.0.1
+version: 2.1
+
+workflows:
+  build_and_test:
+    jobs:
+      - lint
+      - unit_tests:
+          requires:
+            - lint
+      - functional_tests:
+          requires:
+            - unit_tests
