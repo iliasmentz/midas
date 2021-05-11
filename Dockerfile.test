@@ -5,10 +5,14 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install pm2@4.4.1 -g
+RUN npm install typescript@4.2.4 -g
 
 RUN npm install
 
-RUN npm run build
+RUN tsc -p ./tsconfig.jest.json
+
+RUN rm -rf src
 
 RUN chmod +x ./scripts/docker-entrypoint.sh
 CMD ["./scripts/docker-entrypoint.sh"]
+

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es6",
     "module": "CommonJS",
     "allowJs": false,
@@ -7,8 +8,10 @@
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "outDir": "./build",
-    "strict": true
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include": ["./src/*"],
+  "include": ["./src/*", "./db/*"],
   "exclude": ["./**/__tests__/*", "./**/__functionaltests__/*"]
 }
