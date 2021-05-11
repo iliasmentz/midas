@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY tsconfig*.json ./
+COPY ./db ./db
 COPY ./src ./src
 RUN npm ci --quiet && npm run build
 
