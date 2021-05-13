@@ -5,6 +5,7 @@ import pino from 'koa-pino-logger';
 import Boom from 'boom';
 import errorHandler from './middleware/errorHandler';
 import health from './health';
+import authenticationMiddleware from './middleware/authentication';
 import {logger} from '../logger';
 
 export default function createServer(): Server {
@@ -18,6 +19,9 @@ export default function createServer(): Server {
 
   // handle errors
   app.use(errorHandler);
+
+  // verify user's identity and set the id in the context
+  app.use(authenticationMiddleware);
 
   // parse application/json
   app.use(
