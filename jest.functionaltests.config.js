@@ -25,6 +25,7 @@ module.exports = {
   silent: false,
   verbose: true,
   setupFiles: ['dotenv/config'],
+  setupFilesAfterEnv: [__dirname + '/jest/integration/db.ts'],
   testEnvironment: 'node',
   testMatch: ['**/__functionaltests__/**/*+(ftest).[jt]s?(x)'],
 };
