@@ -43,11 +43,13 @@
     "koa-pino-logger": "^3.0.0",
     "koa-router": "^10.0.0",
     "nanoid": "^3.1.23",
+    "path": "^0.12.7",
     "pg": "^8.6.0",
     "pino": "^6.4.0",
     "pino-pretty": "^4.2.1",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.32",
+    "typeorm-encrypted": "^0.5.6",
     "typeorm-naming-strategies": "^2.0.0",
     "uuidv4": "^6.2.8"
   },
