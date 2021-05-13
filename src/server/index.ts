@@ -6,6 +6,7 @@ import Boom from 'boom';
 import errorHandler from './middleware/errorHandler';
 import health from './health';
 import authenticationMiddleware from './middleware/authentication';
+import cards from './cards';
 import {logger} from '../logger';
 
 export default function createServer(): Server {
@@ -32,6 +33,8 @@ export default function createServer(): Server {
       },
     })
   );
+
+  app.use(cards.routes()).use(cards.allowedMethods());
 
   return http.createServer(app.callback());
 }
