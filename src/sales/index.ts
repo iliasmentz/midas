@@ -1,7 +1,4 @@
 import {SaleRequest} from './model';
-
-async function processSale(userId: string, saleRequest: SaleRequest) {
-  throw new Error('Not Implemented');
-}
+import {process as processSale} from './actions';
 
 export {processSale, SaleRequest};
