@@ -8,7 +8,7 @@ function nowPlusDays(days: number): Date {
   return addDays(days, now());
 }
 
-export = {
+export default {
   now,
   nowPlusDays,
 };
