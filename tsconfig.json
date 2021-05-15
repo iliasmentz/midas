@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "target": "es6",
     "module": "CommonJS",
+    "moduleResolution": "node",
     "allowJs": false,
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -10,8 +11,13 @@
     "outDir": "./build",
     "strict": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/@types"
+    ],
+
   },
-  "include": ["./src/*", "./db/*"],
-  "exclude": ["./**/__tests__/*", "./**/__functionaltests__/*"]
+  "include": ["./src/**/*", "./db/**/*"],
+  "exclude": ["./**/__tests__/*", "./**/__functionaltests__/*", "types"]
 }
