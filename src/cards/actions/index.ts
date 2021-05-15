@@ -1,3 +1,4 @@
 import tokenizeCard from './tokenize';
+import fetchByToken from './fetch';
 
-export {tokenizeCard};
+export {tokenizeCard, fetchByToken};
