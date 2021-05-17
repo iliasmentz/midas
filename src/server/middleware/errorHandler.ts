@@ -15,6 +15,8 @@ export default async function errorHandler(ctx: Context, next: Next): Promise<vo
     ctx.response.body = boom.output.payload;
 
     // print unknown error stack to stderr
-    logger.error(boom.stack ? (boom.stack as string) : boom.message);
+    if (boom.isServer) {
+      logger.error(boom.stack ? (boom.stack as string) : boom.message);
+    }
   }
 }
