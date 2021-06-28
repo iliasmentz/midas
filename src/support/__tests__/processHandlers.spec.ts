@@ -1,18 +1,7 @@
-import {releaseResources, handleError, handleTerminationSignal} from '../processHandlers';
+import {handleError, handleTerminationSignal} from '../processHandlers';
 import {mockProcessExit} from 'jest-mock-process';
 
 describe('app', () => {
-  it('terminates rabbitmq connection and exits process', async () => {
-    // given
-    const exitProcessMock = mockProcessExit();
-
-    // when
-    await releaseResources();
-
-    // then
-    expect(exitProcessMock).toBeCalled();
-  });
-
   it('handles unspecified error', async () => {
     // given
     const error = {

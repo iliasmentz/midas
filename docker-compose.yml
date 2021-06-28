@@ -1,9 +1,19 @@
 version: "3.7"
 
+volumes:
+  pgdata:
+
 services:
+  db:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    env_file: .docker-compose.env
   api:
     build: .
     image: midas/api
     ports:
       - 3000:3000
     env_file: .docker-compose.env
+    depends_on:
+      - db

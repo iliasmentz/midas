@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'app',
-      script: './build/app.js',
+      script: './build/src/app.js',
       instances: 1,
       autorestart: true,
       // Process manager will restart the process up to 10 times.
